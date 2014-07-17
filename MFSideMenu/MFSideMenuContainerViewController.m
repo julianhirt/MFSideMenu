@@ -202,7 +202,14 @@ typedef enum {
     
     [self addChildViewController:_centerViewController];
     [self.view addSubview:[_centerViewController view]];
-    [((UIViewController *)_centerViewController) view].frame = (CGRect){.origin = origin, .size=centerViewController.view.frame.size};
+    CGRect newFrame;
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsLandscape(orientation)) {
+        newFrame = CGRectMake(origin.x, origin.y, centerViewController.view.frame.size.height, centerViewController.view.frame.size.width);
+    } else {
+        newFrame = CGRectMake(origin.x, origin.y, centerViewController.view.frame.size.width, centerViewController.view.frame.size.height);
+    }
+    [((UIViewController *)_centerViewController) view].frame = newFrame;
     
     [_centerViewController didMoveToParentViewController:self];
     
