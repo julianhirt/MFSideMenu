@@ -526,9 +526,8 @@ typedef enum {
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-	return NO;
+    return  _menuState == MFSideMenuStateClosed;
 }
-
 
 #pragma mark -
 #pragma mark - UIGestureRecognizer Callbacks
