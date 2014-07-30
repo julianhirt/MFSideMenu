@@ -191,25 +191,24 @@ typedef enum {
     if(self.viewHasAppeared) [self setLeftSideMenuFrameToClosedPosition];
 }
 
-- (void)setCenterViewController:(UIViewController *)centerViewController {
+-(void)setCenterViewController:(UIViewController *)centerViewController {
     [self removeCenterGestureRecognizers];
-    [self removeChildViewControllerFromContainer:_centerViewController];
-    self.shadow = nil;
+    [self removeChildViewControllerFromContainer:_centerViewController]; self.shadow = nil;
     
     CGPoint origin = ((UIViewController *)_centerViewController).view.frame.origin;
+    CGSize size = ((UIViewController *)_centerViewController).view.frame.size;
+    
     _centerViewController = centerViewController;
     if(!_centerViewController) return;
     
     [self addChildViewController:_centerViewController];
     [self.view addSubview:[_centerViewController view]];
-    CGRect newFrame;
-    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (UIDeviceOrientationIsLandscape(orientation)) {
-        newFrame = CGRectMake(origin.x, origin.y, centerViewController.view.frame.size.height, centerViewController.view.frame.size.width);
-    } else {
-        newFrame = CGRectMake(origin.x, origin.y, centerViewController.view.frame.size.width, centerViewController.view.frame.size.height);
+    
+    if (size.width == 0) {
+        size = centerViewController.view.frame.size;
     }
-    [((UIViewController *)_centerViewController) view].frame = newFrame;
+    
+    [((UIViewController *)_centerViewController) view].frame = (CGRect){.origin = origin, .size=size};
     
     [_centerViewController didMoveToParentViewController:self];
     
@@ -217,7 +216,6 @@ typedef enum {
     [self.shadow draw];
     [self addCenterGestureRecognizers];
 }
-
 - (void)setRightMenuViewController:(UIViewController *)rightSideMenuViewController {
     [self removeChildViewControllerFromContainer:_rightSideMenuViewController];
     
