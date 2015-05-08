@@ -10,29 +10,29 @@
 	<string>MFSideMenu</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>80E08278-BD1B-4DD1-B4A0-E9B3598885C4</key>
+		<key>FD1F1136706A3AC50FF2774C2FF3576B75B0FCFB</key>
 		<string>ssh://github.com/julianhirt/MFSideMenu.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MFSideMenu.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>80E08278-BD1B-4DD1-B4A0-E9B3598885C4</key>
+		<key>FD1F1136706A3AC50FF2774C2FF3576B75B0FCFB</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/julianhirt/MFSideMenu.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>80E08278-BD1B-4DD1-B4A0-E9B3598885C4</string>
+	<string>FD1F1136706A3AC50FF2774C2FF3576B75B0FCFB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>80E08278-BD1B-4DD1-B4A0-E9B3598885C4</string>
+			<string>FD1F1136706A3AC50FF2774C2FF3576B75B0FCFB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MFSideMenu</string>
 		</dict>

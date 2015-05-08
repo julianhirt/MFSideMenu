@@ -15,7 +15,7 @@
 
 - (MFSideMenuContainerViewController *)menuContainerViewController {
     id containerView = self;
-    while (![containerView isKindOfClass:[MFSideMenuContainerViewController class]] && containerView) {
+    while (![@"MFSideMenuContainerViewController" isEqualToString: NSStringFromClass([containerView  class])] && containerView) {
         if ([containerView respondsToSelector:@selector(parentViewController)])
             containerView = [containerView parentViewController];
         if ([containerView respondsToSelector:@selector(splitViewController)] && !containerView)
